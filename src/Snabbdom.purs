@@ -5,12 +5,14 @@ import DOM.Node.Types (Element)
 import Data.Maybe (Maybe(..))
 import Data.StrMap (StrMap)
 import Data.Unit (Unit)
+import Data.Nullable (Nullable)
 
 newtype VNodeProxy e = VNodeProxy
   { sel :: String
   , data :: VNodeData e
   , children :: Array (VNodeProxy e)
   , elm :: Element
+  , key :: Nullable String
   }
 -- | Attrs allows you to set attributes on DOM elements.
 -- |
